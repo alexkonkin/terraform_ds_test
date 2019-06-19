@@ -12,14 +12,14 @@ resource "null_resource" "test" {
 }
 
 module "calc1" {
-  source = "../calc"
+  source = "./calc"
   operation = "${var.operation}"
   one = "${null_resource.test[0].triggers.val1}"
   two = "${null_resource.test[0].triggers.val2}"
 }
 
 module "calc2" {
-  source = "../calc"
+  source = "./calc"
   operation = "${var.operation}"
   one = "${null_resource.test[1].triggers.val1}"
   two = "${null_resource.test[1].triggers.val2}"
